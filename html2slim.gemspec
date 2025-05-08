@@ -15,6 +15,8 @@ Gem::Specification.new do |s|
   s.require_paths    = ["lib"]
   s.files            = `git ls-files -- lib/* bin/* README.md`.split("\n")
   s.executables      = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
+  s.license = 'MIT'
+  s.metadata['homepage_uri'] = s.homepage
 
   s.add_dependency 'nokogiri'
   s.add_development_dependency 'minitest'
