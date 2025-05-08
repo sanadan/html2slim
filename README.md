@@ -1,10 +1,12 @@
-![Version](https://img.shields.io/gem/v/html2slim.svg)
+# HTML2Slim2
 
+![Version](https://img.shields.io/gem/v/html2slim2.svg)
+
+<!--
 [![Build Status](https://travis-ci.org/slim-template/html2slim.png?branch=master)](https://travis-ci.org/slim-template/html2slim)
 
 [![Code climate](https://codeclimate.com/github/slim-template/html2slim.png)](https://codeclimate.com/github/slim-template/html2slim)
-
-## HTML2Slim
+-->
 
 Script for converting HTML and ERB files to [slim](http://slim-lang.com/).
 
@@ -36,7 +38,11 @@ This project is released under the MIT license.
 
 ## Author
 
-[Maiz Lulkin](https://github.com/joaomilho) and [contributors](https://github.com/slim-template/html2slim/graphs/contributors)
+[Maiz Lulkin](https://github.com/joaomilho) and [contributors](https://github.com/sanadan/html2slim/graphs/contributors)
+
+## Maintained repo
+
+[https://github.com/sanadan/html2slim](https://github.com/sanadan/html2slim)
 
 ## OFFICIAL REPO
 

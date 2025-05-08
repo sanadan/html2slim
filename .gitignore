@@ -5,3 +5,6 @@ Gemfile.lock
 .rvmrc
 .yardoc
 .DS_Store
+/pkg
+/*.gem
+

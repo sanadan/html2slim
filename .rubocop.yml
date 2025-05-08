@@ -1,20 +1,11 @@
-require:
-  - rubocop-performance
+inherit_gem:
+  rubocop-rails-omakase: rubocop.yml
 
 AllCops:
   NewCops: enable
 
-Metrics/MethodLength:
-  Max: 25
-
-Style/ClassAndModuleChildren:
+Layout/SpaceInsideArrayLiteralBrackets:
   Enabled: false
 
-Style/Documentation:
-  Enabled: false
-
-Style/FrozenStringLiteralComment:
-  Enabled: false
-
-Style/PerlBackrefs:
+Style/StringLiterals:
   Enabled: false
