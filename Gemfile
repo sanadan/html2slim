@@ -2,7 +2,8 @@ source 'https://rubygems.org'
 
 gemspec
 
-gem 'minitest'
-gem 'rake'
-gem 'rubocop-rails-omakase'
-gem 'slim'
+gem 'minitest', require: false
+gem 'rake', require: false
+gem 'rubocop-rails-omakase', require: false
+gem 'slim', require: false
+gem 'simplecov', require: false

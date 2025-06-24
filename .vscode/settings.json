@@ -1,5 +1,6 @@
 {
   "cSpell.words": [
+    "autorun",
     "Backrefs",
     "Frameset",
     "Lulkin",
@@ -7,8 +8,11 @@
     "omakase",
     "Pageview",
     "raquo",
+    "redcar",
     "rubocop",
+    "rvmrc",
     "sanadan",
-    "templating"
+    "templating",
+    "yardoc"
   ]
 }
