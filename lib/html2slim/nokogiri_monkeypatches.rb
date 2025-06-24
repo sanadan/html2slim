@@ -51,7 +51,7 @@ class Nokogiri::XML::Element
   end
 
   def to_slim(lvl = 0)
-    if children.count.positive?
+    if children.any?
       %(#{slim(lvl)}\n#{children.filter_map { |c| c.to_slim(lvl + 1) }.join("\n")})
     else
       slim(lvl)
@@ -60,8 +60,8 @@ class Nokogiri::XML::Element
 
   private
 
-  def slim_ruby_code(r)
-    (code.strip[0] == '=' ? '' : '- ') + code.strip.gsub('\\n', "\n#{r}- ")
+  def slim_ruby_code(indent)
+    (code.strip[0] == '=' ? '' : '- ') + code.strip.gsub('\\n', "\n#{indent}- ")
   end
 
   def code
@@ -86,15 +86,15 @@ class Nokogiri::XML::Element
     has_attributes? ? "[#{attributes_as_html.to_s.strip}]" : ''
   end
 
-  def has_attributes?
+  def has_attributes? # rubocop:disable Naming/PredicatePrefix
     attributes.to_hash.any?
   end
 
-  def has_id?
+  def has_id? # rubocop:disable Naming/PredicatePrefix
     has_attribute?('id') && !(BLANK_RE === self['id'])
   end
 
-  def has_class?
+  def has_class? # rubocop:disable Naming/PredicatePrefix
     has_attribute?('class') && !(BLANK_RE === self['class'])
   end
 
@@ -111,15 +111,15 @@ class Nokogiri::XML::Element
   end
 
   def attributes_as_html
-    attributes.map do |aname, aval|
-      " #{aname}" + (aval ? "=#{html_quote aval.to_s}" : '')
+    attributes.map do |attr_name, attr_val|
+      " #{attr_name}" + (attr_val ? "=#{html_quote attr_val.to_s}" : '')
     end.join
   end
 end
 
 class Nokogiri::XML::DocumentFragment
   def to_slim
-    if children.count.positive?
+    if children.any?
       children.filter_map(&:to_slim).join("\n")
     else
       ''
@@ -129,7 +129,7 @@ end
 
 class Nokogiri::XML::Document
   def to_slim
-    if children.count.positive?
+    if children.any?
       children.filter_map(&:to_slim).join("\n")
     else
       ''
