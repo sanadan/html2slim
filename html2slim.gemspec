@@ -1,4 +1,4 @@
-require File.expand_path("../lib/html2slim/version", __FILE__)
+require File.expand_path('lib/html2slim/version', __dir__)
 require "date"
 
 Gem::Specification.new do |s|
@@ -17,10 +17,8 @@ Gem::Specification.new do |s|
   s.executables      = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
   s.license = 'MIT'
   s.metadata['homepage_uri'] = s.homepage
+  s.metadata['rubygems_mfa_required'] = 'true'
+  s.required_ruby_version = '>= 3.1'
 
   s.add_dependency 'nokogiri'
-  s.add_development_dependency 'minitest'
-  s.add_development_dependency 'rake'
-  s.add_development_dependency 'rubocop-rails-omakase'
-  s.add_development_dependency "slim"
 end

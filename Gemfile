@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
 gemspec
-# gem 'minitest'
-# gem 'slim'
-# gem 'rake'
-# gem 'tmpdir'
+
+gem 'minitest'
+gem 'rake'
+gem 'rubocop-rails-omakase'
+gem 'slim'
