@@ -86,15 +86,15 @@ class Nokogiri::XML::Element
     has_attributes? ? "[#{attributes_as_html.to_s.strip}]" : ''
   end
 
-  def has_attributes? # rubocop:disable Naming/PredicateName
+  def has_attributes?
     attributes.to_hash.any?
   end
 
-  def has_id? # rubocop:disable Naming/PredicateName
+  def has_id?
     has_attribute?('id') && !(BLANK_RE === self['id'])
   end
 
-  def has_class? # rubocop:disable Naming/PredicateName
+  def has_class?
     has_attribute?('class') && !(BLANK_RE === self['class'])
   end
 
@@ -146,9 +146,9 @@ class Nokogiri::XML::Comment
     return nil if str.empty?
 
     if str.include?("\n")
-      "#{r}/!\n#{r}  " + str.gsub("\n", "\n#{r}  ")
+      "#{r}/\n#{r}  " + str.gsub("\n", "\n#{r}  ")
     else
-      "#{r}/! #{str}"
+      "#{r}/ #{str}"
     end
   end
 end
